@@ -24,3 +24,20 @@
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+.screenContainerDiv {
+    max-width: 1400px;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: calc(100vh - (65px + 50px)); /* total screen height - (navBar height - footer height) */
+
+    /* px-7 class of tailwind */
+    padding-left: 1.75rem; /* 28px */
+    padding-right: 1.75rem; /* 28px */
+
+    /* py-10 class of tailwind */
+    padding-top: 2.5rem; /* 40px */
+    padding-bottom: 2.5rem; /* 40px */
+
+    color: black;
+}
