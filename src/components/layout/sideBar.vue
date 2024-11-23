@@ -119,6 +119,7 @@ export default {
     overflow-y: auto;
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* Horizontal, Vertical, Blur, Color */
     transition: transform 0.3s ease-out;
+    z-index: 100;
 
     /* To hide the scrollbar */
     scrollbar-width: none; /* For Firefox */
