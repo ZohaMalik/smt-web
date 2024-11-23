@@ -1,20 +1,16 @@
 <script setup>
-import { ref } from 'vue';
-import NavBar from '../components/layout/navBar.vue';
-import SideBar from '../components/layout/sideBar.vue';
-
-const isSidebarOpen = ref(false);
-
-function toggleSideBar() { isSidebarOpen.value = !isSidebarOpen.value; }
-
 </script>
 
 <template>
-    <div>
-        <NavBar @toggleSideBar="toggleSideBar" />
-        <SideBar :isOpen="isSidebarOpen" @toggleSideBar="toggleSideBar" />
+    <div id="homeScreenDiv" class="mx-auto px-3 py-10" style="background-color: pink; min-height: 1200px;">
+        123
     </div>
 </template>
 
 <style scoped>
+
+#homeScreenDiv {
+    max-width: 915px;
+}
+
 </style>

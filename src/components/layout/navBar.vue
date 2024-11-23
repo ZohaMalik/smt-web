@@ -1,5 +1,5 @@
 <template>
-    <div id="navBarDiv" class="fade-in flex justify-between items-center px-5 bg-white border-b-2 border-gray-200">
+    <div id="navBarDiv" class="fade-in flex justify-between items-center px-5 bg-white border-b border-gray-200">
 
         <!-- Left Side -->
         <div class="flex justify-center items-center cursor-pointer" @click="$router.push('/')">

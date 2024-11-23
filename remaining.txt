@@ -27,8 +27,6 @@ NavBar:
     Home, About Us, Contacts - on click - to check if it does as expected
 Sidebar:
     on click of a side bar item
-Footer: 
-    checklist
 Home Screen: 
     title box - checklist
     about us - checklist

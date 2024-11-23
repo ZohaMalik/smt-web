@@ -119,6 +119,15 @@ export default {
     overflow-y: auto;
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* Horizontal, Vertical, Blur, Color */
     transition: transform 0.3s ease-out;
+
+    /* To hide the scrollbar */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer */
+}
+
+/* To hide the scrollbar */
+#sideBarDiv::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
 }
 
 /* Transition classes for sliding the sideBar - https://vuejs.org/guide/built-ins/transition */
