@@ -1,0 +1,25 @@
+@keyframes fadeInAnimation { 0% { opacity: 0; } 100% { opacity: 1; } }
+.fade-in { 
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/* https://www.30secondsofcode.org/css/s/hover-underline-animation/ */
+.hover-underline-animation { position: relative; }
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: -1px;
+    left: 0;
+    background-color: #01A58A;
+    transition: transform 0.25s ease-out;
+    transform-origin: bottom right;
+}
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

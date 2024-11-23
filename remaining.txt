@@ -1,0 +1,49 @@
+Checklist: 
+    - add content and its styling
+    - tooltips
+    - empty or invalid input (for search...)
+    - toasts
+    - loading (data clear on initial load)
+    - disabled state
+    - responsive 
+    - animations
+    - comments, unused code
+    - warnings and errors on console
+
+-----------------------------------------------------------------------
+
+Iqra Taleem ul Quran Academy Screen - Home: 
+    checklist
+Iqra Taleem ul Quran Academy Screen - Al Quran Lecture: 
+    checklist
+Iqra Taleem ul Quran Academy Screen - Seerat...: 
+    checklist
+Iqra Taleem ul Quran Academy Screen - Ulama Biyans: 
+    checklist
+Iqra Taleem ul Quran Academy Screen - Lessons: 
+    checklist
+NavBar: 
+    Search functionality (+ checklist for this)
+    Home, About Us, Contacts - on click - to check if it does as expected
+Sidebar:
+    on click of a side bar item
+Footer: 
+    checklist
+Home Screen: 
+    title box - checklist
+    about us - checklist
+    contacts - checklist
+Aims & Objectives Screen: 
+    checklist
+Beneficiaries Screen: 
+    checklist
+Donations Screen: 
+    checklist
+Future Projects Screen: 
+    checklist
+Informations Screen - Home: 
+    checklist
+Informations Screen - Annual Meeting: 
+    checklist
+Informations Screen - Updates: 
+    checklist
