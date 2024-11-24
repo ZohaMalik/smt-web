@@ -12,32 +12,21 @@ Checklist:
 
 -----------------------------------------------------------------------
 
-Iqra Taleem ul Quran Academy Screen - Home: 
-    checklist
-Iqra Taleem ul Quran Academy Screen - Al Quran Lecture: 
-    checklist
-Iqra Taleem ul Quran Academy Screen - Seerat...: 
-    checklist
-Iqra Taleem ul Quran Academy Screen - Ulama Biyans: 
-    checklist
-Iqra Taleem ul Quran Academy Screen - Lessons: 
-    checklist
-
-Informations Screen - Home: 
-    checklist
-Informations Screen - Annual Meeting: 
-    checklist
-Informations Screen - Updates: 
-    checklist
-
 NavBar: 
     Search functionality (+ checklist for this)
     Home, About Us, Contacts - on click - to check if it does as expected
 
-Future Projects Screen: 
-    for gallery use an npm package
-Donations Screen: 
-    for gallery use an npm package
+Informations Screen - Home: gallery remaining
+Informations Screen - Annual Meeting: document remaining
+Informations Screen - Updates: content remaining
+
+Iqra Taleem ul Quran Academy Screen - Al Quran Lecture: pdf to show remaining
+Iqra Taleem ul Quran Academy Screen - Seerat...: gallery remaining
+Iqra Taleem ul Quran Academy Screen - Ulama Biyans: gallery remaining
+Iqra Taleem ul Quran Academy Screen - Lessons: gallery remaining
+
+Future Projects Screen: for gallery use an npm package
+Donations Screen: for gallery use an npm package
 
 Home Screen: 
     title box
