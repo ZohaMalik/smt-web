@@ -42,7 +42,12 @@ Donations Screen:
 Home Screen: 
     title box
         - checklist
+        - donate button on click - nav bar home page sections issue
+        - image parallex and responsive issue
     about us 
         - checklist
-    contacts 
-        - checklist
+        - side border design
+        - images flex to convert to column and rows...
+        - nature of activities 
+        - affiliation with other groups
+    contacts - checklist

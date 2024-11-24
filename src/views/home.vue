@@ -1,16 +1,16 @@
 <script setup>
+
+import Intro from '@/components/homeComponents/intro.vue';
+import AboutUs from '@/components/homeComponents/aboutUs.vue';
+
 </script>
 
 <template>
-    <div id="homeScreenDiv" class="mx-auto px-3 py-10" style="background-color: pink; min-height: 1200px;">
-        123
+    <div class="screenContainerDiv fade-in">
+        <Intro />
+        <AboutUs />
     </div>
 </template>
 
 <style scoped>
-
-#homeScreenDiv {
-    max-width: 915px;
-}
-
 </style>
