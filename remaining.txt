@@ -22,26 +22,27 @@ Iqra Taleem ul Quran Academy Screen - Ulama Biyans:
     checklist
 Iqra Taleem ul Quran Academy Screen - Lessons: 
     checklist
-NavBar: 
-    Search functionality (+ checklist for this)
-    Home, About Us, Contacts - on click - to check if it does as expected
-Sidebar:
-    on click of a side bar item
-Home Screen: 
-    title box - checklist
-    about us - checklist
-    contacts - checklist
-Aims & Objectives Screen: 
-    checklist
-Beneficiaries Screen: 
-    checklist
-Donations Screen: 
-    checklist
-Future Projects Screen: 
-    checklist
+
 Informations Screen - Home: 
     checklist
 Informations Screen - Annual Meeting: 
     checklist
 Informations Screen - Updates: 
     checklist
+
+NavBar: 
+    Search functionality (+ checklist for this)
+    Home, About Us, Contacts - on click - to check if it does as expected
+
+Future Projects Screen: 
+    for gallery use an npm package
+Donations Screen: 
+    for gallery use an npm package
+
+Home Screen: 
+    title box
+        - checklist
+    about us 
+        - checklist
+    contacts 
+        - checklist

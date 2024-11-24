@@ -1,32 +1,32 @@
 <template>
     <Transition>
         <div v-if="isOpen" id="sideBarDiv" class="bg-white p-3">
-            <!-- SideBar Close Icon -->
+            <!-- SideBar Close Image -->
             <div class="flex justify-end items-center">
                 <button @click="$emit('toggleSideBar')" class="bg-green-100 p-2 mb-3 rounded-lg hover:opacity-75" 
                     title="Close Side Bar">
-                    <img :src="sideBarCloseIcon" alt="Close Side Bar" />
+                    <img :src="sideBarCloseImage" alt="Close Side Bar" />
                 </button>
             </div>
 
             <!-- SideBar Content -->
             <div v-for="item in items" :key="item.name">
-                <div @click="selectedItem==item.name?(item.subItems.length ? toggleSubMenuDisplay() : null):selectItem(item)"
+                <div @click="selectedItem.name==item.name?(item.subItems.length ? toggleSubMenuDisplay() : null):selectItem(item)"
                     :class="`py-2 px-4 mb-3 rounded-xl flex justify-between items-center
-                            ${(selectedItem==item.name && item.subItems.length==0)?'bg-green-100':'cursor-pointer'}
-                            ${selectedItem==item.name?'font-semibold':''}`">
+                            ${(selectedItem.name==item.name && item.subItems.length==0)?'bg-green-100':'cursor-pointer'}
+                            ${selectedItem.name==item.name?'font-semibold':''}`">
                     {{ item.name }}
                     <img v-if="item.subItems.length" alt="Show Sub Menu"
-                        :src="selectedItem==item.name && showSubItems ? bottomArrowIcon : rightArrowIcon" />
+                        :src="selectedItem.name==item.name && showSubItems ? bottomArrowImage : rightArrowImage" />
                 </div>
 
                 <!-- For Sub Menu's -->
-                <div v-if="selectedItem==item.name && item.subItems.length && showSubItems" 
+                <div v-if="selectedItem.name==item.name && item.subItems.length && showSubItems" 
                     :class="`px-7 pr-3 mb-3 subItemsDiv ${item.subItemClassName}`">
-                    <div v-for="subItem in item.subItems" :key="subItem" 
-                        @click="selectedSubItem==subItem?null:selectSubItem(subItem)"
-                        :class="`py-2 px-4 rounded-xl ${selectedSubItem==subItem?'bg-green-100 font-semibold':'cursor-pointer'}`">
-                        {{ subItem }}
+                    <div v-for="subItem in item.subItems" :key="item.name+subItem.name" 
+                        @click="selectedSubItem.name==subItem.name?null:selectSubItem(subItem)"
+                        :class="`py-2 px-4 rounded-xl ${selectedSubItem.name==subItem.name?'bg-green-100 font-semibold':'cursor-pointer'}`">
+                        {{ subItem.name }}
                     </div>
                 </div>
             </div>
@@ -35,9 +35,9 @@
 </template>
 
 <script>
-import sideBarCloseIcon from '@/assets/images/sideBar/sideBarClose.svg';
-import rightArrowIcon from '@/assets/images/sideBar/rightArrow.svg';
-import bottomArrowIcon from '@/assets/images/sideBar/bottomArrow.svg';
+import sideBarCloseImage from '@/assets/images/sideBar/sideBarClose.svg';
+import rightArrowImage from '@/assets/images/sideBar/rightArrow.svg';
+import bottomArrowImage from '@/assets/images/sideBar/bottomArrow.svg';
 
 export default {
     name: 'SideBar',
@@ -45,39 +45,56 @@ export default {
     data()
     {
         return {
-            sideBarCloseIcon,
-            rightArrowIcon,
-            bottomArrowIcon,
+            sideBarCloseImage,
+            rightArrowImage,
+            bottomArrowImage,
             items: [
                 {
                     name: 'Home',
-                    subItems: []
+                    subItems: [],
+                    route: '/'
                 },
                 {
                     name: 'Aims & Objectives',
-                    subItems: []
+                    subItems: [],
+                    route: '/ourAimsAndObjectives'
                 },
                 {
                     name: 'Beneficiaries',
-                    subItems: []
+                    subItems: [],
+                    route: '/beneficiaries'
                 },
                 {
                     name: 'Donations',
-                    subItems: []
+                    subItems: [],
+                    route: '/donations'
                 },
                 {
                     name: 'Future Projects',
-                    subItems: []
+                    subItems: [],
+                    route: '/futureProjects'
                 },
                 {
                     name: 'Iqra Taleem ul Quran Academy',
-                    subItems: [ 'Home', 'Al Quran Lecture', 'Seerat H. Umar Farooq (RA)', 'Ulama Biyans', 'Lessons' ],
-                    subItemClassName: 'academy'
+                    subItems: [
+                        { name: 'Home', route: '/home' },
+                        { name: 'Al Quran Lecture', route: '/alQuranLecture' },
+                        { name: 'Seerat H. Umar Farooq (RA)', route: '/seeratHazratUmarFarooqRA' },
+                        { name: 'Ulama Biyans', route: '/ulamaBiyans' },
+                        { name: 'Lessons', route: '/lessons' }
+                    ],
+                    subItemClassName: 'academy',
+                    route: '/iqraTaleemUlQuranAcademy'
                 },
                 {
                     name: 'Informations',
-                    subItems: [ 'Home', 'Annual Meeting', 'Updates' ],
-                    subItemClassName: 'info'
+                    subItems: [
+                        { name: 'Home', route: '/home' },
+                        { name: 'Annual Meeting', route: '/annualMeeting' },
+                        { name: 'Updates', route: '/updates' }
+                    ],
+                    subItemClassName: 'info',
+                    route: '/informations'
                 }
             ],
             selectedItem: null,
@@ -85,21 +102,59 @@ export default {
             showSubItems: true
         }
     },
-    created() { this.selectedItem = this.items[0].name; },
+    created()
+    {
+        try {
+            let urlParts = window.location.pathname.split('/');        
+    
+            let itemExists = this.items.filter(i => i.route==`/${urlParts[1]}`).length;
+            let subItemExists = true;
+            if(urlParts.length == 3) { subItemExists = this.items.filter(i => i.route==`/${urlParts[1]}`)[0].subItems.filter(i => i.route==`${urlParts[2]}`).length; }
+            
+            if((urlParts.length == 2 || urlParts.length == 3) && itemExists)
+            {
+                this.selectedItem = this.items.filter(i => i.route==`/${urlParts[1]}`)[0];
+                this.$emit('screenChanged', `/${urlParts[1]}`);
+    
+                if(urlParts.length == 3 && subItemExists)
+                {
+                    this.selectedSubItem = this.selectedItem.subItems.filter(i => i.route==`${urlParts[2]}`)[0];
+                    this.showSubItems = true;
+                    this.$emit('screenChanged', `/${urlParts[2]}`);
+                }
+                else { this.setNotFoundPage(); }
+            }
+            else { this.setNotFoundPage(); }
+        }
+        catch(error) { this.setNotFoundPage(); }
+    },
     methods: {
+        setNotFoundPage()
+        {
+            this.selectedItem = { name: '404', subItems: [], route: '/404' };
+        },
         selectItem(itemToSelect)
         {
-            this.selectedItem = itemToSelect.name;
+            this.selectedItem = itemToSelect;
             if(itemToSelect.subItems.length) {
                 this.selectedSubItem = itemToSelect.subItems[0];
                 this.showSubItems = true;
+                this.$router.push(itemToSelect.route + itemToSelect.subItems[0].route);
+                this.$emit('screenChanged', itemToSelect.route + itemToSelect.subItems[0].route);
             }
             else {
                 this.selectedSubItem = null;
                 this.showSubItems = false;
+                this.$router.push(itemToSelect.route);
+                this.$emit('screenChanged', itemToSelect.route);
             }
         },
-        selectSubItem(subItemToSelect) { this.selectedSubItem = subItemToSelect; },
+        selectSubItem(subItemToSelect)
+        {
+            this.selectedSubItem = subItemToSelect;
+            this.$router.push(this.selectedItem.route + subItemToSelect.route);
+            this.$emit('screenChanged', this.selectedItem.route + subItemToSelect.route);
+        },
         toggleSubMenuDisplay() { this.showSubItems = !this.showSubItems; }
     }
 }

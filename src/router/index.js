@@ -6,13 +6,39 @@ import OurAimsAndObjectives from '@/views/ourAimsAndObjectives.vue';
 import Beneficiaries from '@/views/beneficiaries.vue';
 import Donations from '@/views/donations.vue';
 import FutureProjects from '@/views/futureProjects.vue';
+import IqraAcademyHome from '@/views/iqraAcademy/home.vue';
+import IqraAcademyQuranLecture from '@/views/iqraAcademy/quranLecture.vue';
+import IqraAcademySeeratHUmarRA from '@/views/iqraAcademy/seeratHUmarRA.vue';
+import IqraAcademyUlamaBiyans from '@/views/iqraAcademy/ulamaBiyans.vue';
+import IqraAcademyLessons from '@/views/iqraAcademy/lessons.vue';
+import InformationsHome from '@/views/informations/home.vue';
+import InformationsAnnualMeeting from '@/views/informations/annualMeeting.vue';
+import InformationsUpdates from '@/views/informations/updates.vue';
+import PageNotFound from '@/views/pageNotFound.vue';
 
 const routes = [
     { path: '/', name: 'Home', component: Home },
     { path: '/ourAimsAndObjectives', name: 'OurAimsAndObjectives', component: OurAimsAndObjectives },
     { path: '/beneficiaries', name: 'Beneficiaries', component: Beneficiaries },
     { path: '/donations', name: 'Donations', component: Donations },
-    { path: '/futureProjects', name: 'FutureProjects', component: FutureProjects }
+    { path: '/futureProjects', name: 'FutureProjects', component: FutureProjects },
+
+    // Iqra Academy Routes
+    { path: '/iqraTaleemUlQuranAcademy/home', name: 'IqraAcademyHome', component: IqraAcademyHome },
+    { path: '/iqraTaleemUlQuranAcademy/alQuranLecture', name: 'IqraAcademyQuranLecture', component: IqraAcademyQuranLecture },
+    { path: '/iqraTaleemUlQuranAcademy/seeratHazratUmarFarooqRA', name: 'IqraAcademySeeratHUmarRA', component: IqraAcademySeeratHUmarRA },
+    { path: '/iqraTaleemUlQuranAcademy/ulamaBiyans', name: 'IqraAcademyUlamaBiyans', component: IqraAcademyUlamaBiyans },
+    { path: '/iqraTaleemUlQuranAcademy/lessons', name: 'IqraAcademyLessons', component: IqraAcademyLessons },
+
+    // Informations Routes
+    { path: '/informations/home', name: 'InformationsHome', component: InformationsHome },
+    { path: '/informations/annualMeeting', name: 'InformationsAnnualMeeting', component: InformationsAnnualMeeting },
+    { path: '/informations/updates', name: 'InformationsUpdates', component: InformationsUpdates },
+
+    // not found page
+    { path: '/404', name: 'PageNotFound', component: PageNotFound },
+    // Redirect any unmatched routes to the 404 page
+    { path: '/:pathMatch(.*)*', redirect: '/404' }
 ];
 
 const router = createRouter({
