@@ -12,31 +12,22 @@ Checklist:
 
 -----------------------------------------------------------------------
 
-NavBar: 
-    Search functionality (+ checklist for this)
-    Home, About Us, Contacts - on click - to check if it does as expected
+1. NavBar - Search functionality (+ checklist for this)
+2. NavBar - Home, About Us, Contacts - on click - to check if it does as expected
+3. Home Screen - Intro - donate button on click - nav bar home page sections issue
+4. Home Screen - Intro - image parallex and responsive issue
+5. Home Screen - Contacts - Checklist
+6. Home Screen - About Us - Checklist 
+7. Home Screen About Us - Side border design and its responsiveness
+8. Home Screen About Us - - images flex to convert to column and rows... or to make responsive
+9. Home Screen About Us - Nature of Activities
+10. Home Screen About Us - Affiliation with other groups
 
-Informations Screen - Home: gallery remaining
-Informations Screen - Annual Meeting: document remaining
-Informations Screen - Updates: content remaining
-
-Iqra Taleem ul Quran Academy Screen - Al Quran Lecture: pdf to show remaining
-Iqra Taleem ul Quran Academy Screen - Seerat...: gallery remaining
-Iqra Taleem ul Quran Academy Screen - Ulama Biyans: gallery remaining
-Iqra Taleem ul Quran Academy Screen - Lessons: gallery remaining
-
-Future Projects Screen: for gallery use an npm package
-Donations Screen: for gallery use an npm package
-
-Home Screen: 
-    title box
-        - checklist
-        - donate button on click - nav bar home page sections issue
-        - image parallex and responsive issue
-    about us 
-        - checklist
-        - side border design
-        - images flex to convert to column and rows...
-        - nature of activities 
-        - affiliation with other groups
-    contacts - checklist
+Improvements for later: 
+- Side bar cross icon to stay there even on scroll
+- Images
+    - on hover - show preview button (with animation)
+    - on click of the preview button - zoom and show image in a modal
+    - for all images in donations, future projects, seerat, lessons, informations home, updates
+    - + to set/edit all images border etc so that they show nicely
+    - loop to get all images in the folder and show them using v-for

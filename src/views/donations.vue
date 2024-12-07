@@ -3,6 +3,13 @@
 import EasyPaisaImage from '@/assets/images/donations/easypaisa.svg';
 import UBLImage from '@/assets/images/donations/ubl.svg';
 
+import Image from '@/components/utils/image.vue';
+import DonationsImage1 from '@/assets/images/donations/contentImages/1.jpg';
+import DonationsImage2 from '@/assets/images/donations/contentImages/2.jpg';
+import DonationsImage3 from '@/assets/images/donations/contentImages/3.jpg';
+import DonationsImage4 from '@/assets/images/donations/contentImages/4.jpg';
+import DonationsImage5 from '@/assets/images/donations/contentImages/5.jpg';
+
 </script>
 
 <template>
@@ -29,7 +36,13 @@ import UBLImage from '@/assets/images/donations/ubl.svg';
         <div class="font-medium">ENGR. IMRAN NAWAZ MALIK (General Secretary)</div>
         <div class="text-green-500 font-medium">+92 300 8561706</div>
 
-        <div style="min-height: 500px;"></div>
+        <div style="min-height: 500px;" class="mt-10 flex justify-center lg:justify-start items-center gap-9 flex-wrap">
+            <Image :imageSrc="DonationsImage1" />
+            <Image :imageSrc="DonationsImage2" />
+            <Image :imageSrc="DonationsImage3" />
+            <Image :imageSrc="DonationsImage4" />
+            <Image :imageSrc="DonationsImage5" />
+        </div>
     </div>
 </template>
 

@@ -7,7 +7,7 @@ import Beneficiaries from '@/views/beneficiaries.vue';
 import Donations from '@/views/donations.vue';
 import FutureProjects from '@/views/futureProjects.vue';
 import IqraAcademyHome from '@/views/iqraAcademy/home.vue';
-import IqraAcademyQuranLecture from '@/views/iqraAcademy/quranLecture.vue';
+import IqraAcademyQuranLecture from '@/views/iqraAcademy/QuranLecture.vue';
 import IqraAcademySeeratHUmarRA from '@/views/iqraAcademy/seeratHUmarRA.vue';
 import IqraAcademyUlamaBiyans from '@/views/iqraAcademy/ulamaBiyans.vue';
 import IqraAcademyLessons from '@/views/iqraAcademy/lessons.vue';
