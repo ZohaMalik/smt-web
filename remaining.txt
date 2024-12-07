@@ -12,16 +12,16 @@ Checklist:
 
 -----------------------------------------------------------------------
 
-1. NavBar - Search functionality (+ checklist for this)
-2. NavBar - Home, About Us, Contacts - on click - to check if it does as expected
-3. Home Screen - Intro - donate button on click - nav bar home page sections issue
-4. Home Screen - Intro - image parallex and responsive issue
-5. Home Screen - Contacts - Checklist
-6. Home Screen - About Us - Checklist 
-7. Home Screen About Us - Side border design and its responsiveness
-8. Home Screen About Us - - images flex to convert to column and rows... or to make responsive
-9. Home Screen About Us - Nature of Activities
-10. Home Screen About Us - Affiliation with other groups
+- NavBar - Search functionality (+ checklist for this)
+- NavBar - on home screen when user scrolls up then set nav bar selected section as home
+- Home Screen - Intro - donate button on click - nav bar home page sections issue (use pinia store for this and store the current shown screen there)
+    - Also when a user is on another screen and clicks smt logo so the user goes to the home screen but side bar does not show Home as selected
+- Home Screen - Intro - image parallex and responsive issue
+- Home Screen - About Us - Checklist
+- Home Screen About Us - Side border design and its responsiveness
+- Home Screen About Us - First paragraph
+- Home Screen About Us - Nature of Activities
+- Home Screen About Us - Affiliation with other groups
 
 Improvements for later: 
 - Side bar cross icon to stay there even on scroll
@@ -31,3 +31,4 @@ Improvements for later:
     - for all images in donations, future projects, seerat, lessons, informations home, updates
     - + to set/edit all images border etc so that they show nicely
     - loop to get all images in the folder and show them using v-for
+- Home Screen Contacts - Contacts and Address Row - if both can be justify-between (right now there is space on left and right...)

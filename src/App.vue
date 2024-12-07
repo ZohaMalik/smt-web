@@ -19,7 +19,7 @@ function screenChanged(screen)
 </script>
 
 <template>
-    <div>
+    <div class="scroll-smooth">
         <NavBar :showHomePageSections="showHomePageSectionsOnNavBar" @toggleSideBar="toggleSideBar" @screenChanged="screenChanged" />
         <SideBar :isOpen="isSidebarOpen" @toggleSideBar="toggleSideBar" @screenChanged="screenChanged" />
         <router-view />

@@ -11,21 +11,21 @@
 
         <!-- Right Side -->
         <div class="flex justify-center items-center">
-            <a v-if="showHomePageSections" href="#home" @click="goToHomePageSection('home')"
+            <router-link v-if="showHomePageSections" to="#home" @click="goToHomePageSection('home')"
                 :class="`mr-3 hidden md:inline
                         ${selectedHomePageSection=='home'?'border-b-2 border-green-500':'hover-underline-animation'}`">
                 Home
-            </a>
-            <a v-if="showHomePageSections" href="#aboutUs" @click="goToHomePageSection('aboutUs')" 
+            </router-link>
+            <router-link v-if="showHomePageSections" to="#aboutUs" @click="goToHomePageSection('aboutUs')" 
                 :class="`mr-3 hidden md:inline 
                         ${selectedHomePageSection=='aboutUs'?'border-b-2 border-green-500':'hover-underline-animation'}`">
                 About Us
-            </a>
-            <a v-if="showHomePageSections" href="#contacts" @click="goToHomePageSection('contacts')" 
+            </router-link>
+            <router-link v-if="showHomePageSections" to="#contacts" @click="goToHomePageSection('contacts')" 
                 :class="`mr-3 hidden md:inline 
                         ${selectedHomePageSection=='contacts'?'border-b-2 border-green-500':'hover-underline-animation'}`">
                 Contacts
-            </a>
+            </router-link>
 
             <button class="mr-3 bg-green-100 p-2 rounded-lg hover:opacity-75" title="Search">
                 <img src="../../assets/images/navBar/search.svg" alt="Search" />

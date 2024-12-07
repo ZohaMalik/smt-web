@@ -6,7 +6,7 @@ import DonateArrowImage from '@/assets/images/home/intro/donateArrow.svg';
 </script>
 
 <template>
-    <div id="introDiv" class="p-5 rounded-lg flex flex-col justify-center items-center mb-20">
+    <div id="introDiv" class="p-5 rounded-lg flex flex-col justify-center items-center mb-12 max-w-screen-lg mx-auto">
         
         <!-- Donate Now Button -->
         <div id="donateNowDiv" class="w-full flex justify-end items-center mb-3">
