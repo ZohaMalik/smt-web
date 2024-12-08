@@ -37,7 +37,8 @@ import DonateArrowImage from '@/assets/images/home/intro/donateArrow.svg';
     background-image: url("../../assets/images/home/intro/building.svg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: bottom;
+    background-position: center;
+    background-size: cover;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: #C3FFF5;
 }
