@@ -6,3 +6,8 @@ Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://
 
 <!-- Old Website Link -->
 https://sites.google.com/view/www-sharifmemorial-com/aims?authuser=0
+
+<!-- To deploy after updating code -->
+- push code to main branch
+- npm run deploy
+- verify
