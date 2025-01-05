@@ -12,6 +12,7 @@ Checklist:
 
 -----------------------------------------------------------------------
 
+- Buy domain name then host with bought domain name
 - NavBar - Search functionality (+ checklist for this)
 - NavBar - on home screen when user scrolls up then set nav bar selected section as home
 - Home Screen - Intro - donate button on click - nav bar home page sections issue (use pinia store for this and store the current shown screen there)
@@ -28,3 +29,6 @@ Improvements for later:
     - loop to get all images in the folder and show them using v-for
 - Home Screen Contacts - Contacts and Address Row - if both can be justify-between (right now there is space on left and right...)
 - Home Screen Contacts - Map warnings on console
+- Home Screen Contacts - Postal Address - last one - update to the moon plaza abu's address
+- Check all paragraphs - instead of multiple p tags use 1 p tag with break tags 
+- SEO 
