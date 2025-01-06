@@ -34,7 +34,7 @@
 
                 <div>
                     <div>Branch Office</div>
-                    <div class="text-green-500">Building No. 1102, Street 45, Bahria Phase-7, Rawalpindi - Pakistan</div>
+                    <div class="text-green-500">Office No. 6, 1st Floor, Moon Plaza, F-10 Markaz, Islamabad - Pakistan</div>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
             </div>
             <div class="flex justify-center items-center rounded-lg bg-green-100 p-1 w-11 h-11 cursor-pointer hover:scale-110" 
                 title="Email">
-                <a target="_blank"  href="mailto:SHARIFMEMORIALTRUST@GMAIL.COM">
+                <a target="_blank"  href="mailto:sharifmtrust@gmail.com">
                     <img :src="EmailImage" alt="Email Image" />
                 </a>
             </div>
