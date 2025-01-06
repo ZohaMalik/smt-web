@@ -34,7 +34,7 @@
 
                 <div>
                     <div>Branch Office</div>
-                    <div class="text-green-500">Office No. 6, 1st Floor, Moon Plaza, F-10 Markaz, Islamabad - Pakistan</div>
+                    <div class="text-green-500">Office No. 6, 1st Floor, Moon Plaza, Block 1-H, F-10 Markaz, Islamabad - Pakistan</div>
                 </div>
             </div>
         </div>
