@@ -9,6 +9,7 @@ import DonationsImage2 from '@/assets/images/donations/contentImages/2.jpg';
 import DonationsImage3 from '@/assets/images/donations/contentImages/3.jpg';
 import DonationsImage4 from '@/assets/images/donations/contentImages/4.jpg';
 import DonationsImage5 from '@/assets/images/donations/contentImages/5.jpg';
+import DonationsImage6 from '@/assets/images/donations/contentImages/6.jpeg';
 
 </script>
 
@@ -42,6 +43,7 @@ import DonationsImage5 from '@/assets/images/donations/contentImages/5.jpg';
             <Image :imageSrc="DonationsImage3" />
             <Image :imageSrc="DonationsImage4" />
             <Image :imageSrc="DonationsImage5" />
+            <Image :imageSrc="DonationsImage6" />
         </div>
     </div>
 </template>
