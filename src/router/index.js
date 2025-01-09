@@ -42,7 +42,7 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHistory('/smt-web/'),
+    history: createWebHistory('/'),
     routes,
 
     scrollBehavior(to, from, savedPosition) {
