@@ -12,7 +12,7 @@ Checklist:
 
 -----------------------------------------------------------------------
 
-- Buy domain name then host with bought domain name
+- url issue (from side bar and screen it works, but on entering the url in chrome url input field it does not work)
 - NavBar - Search functionality (+ checklist for this)
 - NavBar - on home screen when user scrolls up then set nav bar selected section as home
 - Home Screen - Intro - donate button on click - nav bar home page sections issue (use pinia store for this and store the current shown screen there)
