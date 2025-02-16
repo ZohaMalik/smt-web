@@ -12,6 +12,15 @@ Checklist:
 
 -----------------------------------------------------------------------
 
+- backend (flask) and db (postgres)
+    - login page frontend (admin login in side bar or ...)
+    - login backend with jwt
+    - login - 2 factor authentication...
+    - logout
+    - crud of the 2 things required for now (frontend and backend)
+    - linking the screens which have the backend with their APIs
+    - get the content of all screens also from backend, also on search...
+- loading to show on images which have the apis
 - url issue (from side bar and screen it works, but on entering the url in chrome url input field it does not work)
 - NavBar - Search functionality (+ checklist for this)
 - NavBar - on home screen when user scrolls up then set nav bar selected section as home

@@ -10,4 +10,4 @@ https://sites.google.com/view/www-sharifmemorial-com/aims?authuser=0
 <!-- To deploy after updating code -->
 - push code to main branch
 - npm run deploy
-- verify
+- verify (github)
