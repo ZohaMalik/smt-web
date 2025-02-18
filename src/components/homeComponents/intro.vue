@@ -2,6 +2,7 @@
 
 import LogoImage from '@/assets/images/logo.svg';
 import DonateArrowImage from '@/assets/images/home/intro/donateArrow.svg';
+import LectureArrowImage from '@/assets/images/home/intro/lectureArrow.svg';
 
 </script>
 
@@ -9,12 +10,19 @@ import DonateArrowImage from '@/assets/images/home/intro/donateArrow.svg';
     <div id="introDiv" class="p-5 rounded-lg flex flex-col justify-center items-center mb-12 max-w-screen-lg mx-auto">
         
         <!-- Donate Now Button -->
-        <div id="donateNowDiv" class="w-full flex justify-end items-center mb-3">
+        <div id="donateNowDiv" class="relative w-full flex justify-end items-center mb-3">
             <button id="donateButton" title="Click to Donate" @click="$router.push('/donations')"
                 class="px-3 py-2 rounded-lg bg-green-500 text-white flex justify-center items-center hover:opacity-75">
                 <span class="mr-2 text-lg">Donate Now</span>
                 <img :src="DonateArrowImage" alt="Arrow" />
             </button>
+
+            <!-- Lecture Link on Bigger Devices -->
+            <div id="lectureLinkDiv" class="hidden md:block absolute right-0 w-40 rounded p-2 bg-white text-center border-2 border-black text-sm cursor-pointer hover:border-green-500 hover:opacity-75"
+                title="Go to Lecture" @click="$router.push('/iqraTaleemUlQuranAcademy/alQuranLecture')">
+                A little effort to convert Quran audio lecture to urdu text and translated into english &nbsp;
+                <img :src="LectureArrowImage" alt="Arrow" class="inline w-3" />
+            </div>
         </div>
 
         <!-- Logo -->
@@ -28,6 +36,13 @@ import DonateArrowImage from '@/assets/images/home/intro/donateArrow.svg';
             Sharif Memorial Trust is a civic organization formed by voluntary entities in the social sphere. 
             SMT represents a wide range of interests and is solely dedicated to community welfare.
         </p>
+
+        <!-- Lecture Link on Smaller Devices -->
+        <div class="block md:hidden rounded p-2 bg-white text-center border-2 border-black cursor-pointer hover:border-green-500 hover:opacity-75"
+            title="Go to Lecture" @click="$router.push('/iqraTaleemUlQuranAcademy/alQuranLecture')">
+            A little effort to convert Quran audio lecture to urdu text and translated into english &nbsp;
+            <img :src="LectureArrowImage" alt="Arrow" class="inline w-3" />
+        </div>
     </div>
 </template>
 
@@ -51,6 +66,10 @@ import DonateArrowImage from '@/assets/images/home/intro/donateArrow.svg';
 
 #donateButton {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#lectureLinkDiv {
+    bottom: -135px;
 }
 
 #orgName {
