@@ -25,13 +25,18 @@ import LessonsImage21 from '@/assets/images/iqraTaleemUlQuranAcademy/lessons/21.
 import LessonsImage22 from '@/assets/images/iqraTaleemUlQuranAcademy/lessons/22.jpg';
 import LessonsImage23 from '@/assets/images/iqraTaleemUlQuranAcademy/lessons/23.jpg';
 import LessonsImage24 from '@/assets/images/iqraTaleemUlQuranAcademy/lessons/24.jpg';
+import LessonsImage25 from '@/assets/images/iqraTaleemUlQuranAcademy/lessons/25.jpeg';
+import LessonsImage26 from '@/assets/images/iqraTaleemUlQuranAcademy/lessons/26.jpeg';
+import LessonsImage27 from '@/assets/images/iqraTaleemUlQuranAcademy/lessons/27.jpeg';
+import LessonsImage28 from '@/assets/images/iqraTaleemUlQuranAcademy/lessons/28.jpeg';
+import LessonsImage29 from '@/assets/images/iqraTaleemUlQuranAcademy/lessons/29.jpeg';
 
 </script>
 
 <template>
     <div class="screenContainerDiv fade-in text-center sm:text-left bg-green-100">
         <h1 class="font-extrabold text-4xl mb-5">Lessons</h1>
-        <div class="flex justify-center lg:justify-start items-center gap-9 flex-wrap">
+        <div class="flex justify-center items-center gap-9 flex-wrap">
             <Image :imageSrc="LessonsImage1" />
             <Image :imageSrc="LessonsImage2" />
             <Image :imageSrc="LessonsImage3" />
@@ -56,6 +61,11 @@ import LessonsImage24 from '@/assets/images/iqraTaleemUlQuranAcademy/lessons/24.
             <Image :imageSrc="LessonsImage22" />
             <Image :imageSrc="LessonsImage23" />
             <Image :imageSrc="LessonsImage24" />
+            <Image :imageSrc="LessonsImage25" />
+            <Image :imageSrc="LessonsImage26" />
+            <Image :imageSrc="LessonsImage27" />
+            <Image :imageSrc="LessonsImage28" />
+            <Image :imageSrc="LessonsImage29" />
         </div>
     </div>
 </template>

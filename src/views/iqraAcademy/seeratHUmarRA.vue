@@ -18,7 +18,7 @@ import SeeratImage11 from '@/assets/images/iqraTaleemUlQuranAcademy/seeratHazrat
 <template>
     <div class="screenContainerDiv fade-in text-center sm:text-left bg-green-100">
         <h1 class="font-extrabold text-4xl mb-5">Seerat Hazrat Umar Farooq (RA)</h1>
-        <div class="flex justify-center lg:justify-start items-center gap-9 flex-wrap">
+        <div class="flex justify-center items-center gap-9 flex-wrap">
             <Image :imageSrc="SeeratImage1" />
             <Image :imageSrc="SeeratImage2" />
             <Image :imageSrc="SeeratImage3" />

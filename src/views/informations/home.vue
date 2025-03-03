@@ -12,7 +12,7 @@ import InformationsImage5 from '@/assets/images/informations/home/5.jpg';
 <template>
     <div class="screenContainerDiv fade-in text-center sm:text-left">
         <h1 class="font-extrabold text-4xl mb-5">Informations</h1>
-        <div class="flex justify-center lg:justify-start items-center gap-9 flex-wrap">
+        <div class="flex justify-center items-center gap-9 flex-wrap">
             <Image :imageSrc="InformationsImage1" />
             <Image :imageSrc="InformationsImage2" />
             <Image :imageSrc="InformationsImage3" />

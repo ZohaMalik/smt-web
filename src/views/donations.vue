@@ -37,7 +37,7 @@ import DonationsImage6 from '@/assets/images/donations/contentImages/6.jpeg';
         <div class="font-medium">ENGR. IMRAN NAWAZ MALIK (General Secretary)</div>
         <div class="text-green-500 font-medium">+92 300 8561706</div>
 
-        <div style="min-height: 500px;" class="mt-10 flex justify-center lg:justify-start items-center gap-9 flex-wrap">
+        <div style="min-height: 500px;" class="mt-10 flex justify-center items-center gap-9 flex-wrap">
             <Image :imageSrc="DonationsImage1" />
             <Image :imageSrc="DonationsImage2" />
             <Image :imageSrc="DonationsImage3" />

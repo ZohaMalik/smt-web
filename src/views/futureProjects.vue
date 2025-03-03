@@ -23,7 +23,7 @@ import FutureProjectsImage7 from '@/assets/images/futureProjects/contentImages/7
         <p class="mb-3">The estimated development cost, based on current market prices (as of January, 2023), is approximately PRS 250 million.</p>
         <p class="mb-5">All members and followers are kindly requested to contribute both morally and financially to complete this project for our children.</p>
 
-        <div class="mt-10 flex justify-center lg:justify-start items-center gap-9 flex-wrap">
+        <div class="mt-10 flex justify-center items-center gap-9 flex-wrap">
             <Image :imageSrc="FutureProjectsImage1" />
             <Image :imageSrc="FutureProjectsImage2" />
             <Image :imageSrc="FutureProjectsImage3" />
