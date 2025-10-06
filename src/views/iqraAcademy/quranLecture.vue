@@ -8,7 +8,7 @@ import OpenInNewTabImage from '@/assets/images/iqraTaleemUlQuranAcademy/QuranLec
 <template>
     <div class="screenContainerDiv fade-in text-center sm:text-left bg-green-100">
         <h1 class="font-extrabold text-4xl mb-5">Al-Quran Lecture Transcriptions</h1>
-        <div class="font-medium mb-5">Urdu with English Translation: (Volume 1 - Surah Fatihah, Al Baqara & Aal e Imran)</div>
+        <div class="font-medium mb-5">Urdu with English Translation: (Volume 1 - Surah Fatihah, Al Baqarah & Aal e Imran)</div>
         <div class="border rounded-lg overflow-hidden shadow-md w-3/4 mx-auto">
             <!-- PDF Preview -->
             <iframe :src="QuranLecuturePDF" class="w-full h-96" frameborder="0"></iframe>
