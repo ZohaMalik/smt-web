@@ -34,38 +34,105 @@ import LessonsImage29 from '@/assets/images/iqraTaleemUlQuranAcademy/lessons/29.
 </script>
 
 <template>
-    <div class="screenContainerDiv fade-in text-center sm:text-left bg-green-100">
-        <h1 class="font-extrabold text-4xl mb-5">Lessons</h1>
-        <div class="flex justify-center items-center gap-9 flex-wrap">
-            <Image :imageSrc="LessonsImage1" />
-            <Image :imageSrc="LessonsImage2" />
-            <Image :imageSrc="LessonsImage3" />
-            <Image :imageSrc="LessonsImage4" />
-            <Image :imageSrc="LessonsImage5" />
-            <Image :imageSrc="LessonsImage6" />
-            <Image :imageSrc="LessonsImage7" />
-            <Image :imageSrc="LessonsImage8" />
-            <Image :imageSrc="LessonsImage9" />
-            <Image :imageSrc="LessonsImage10" />
-            <Image :imageSrc="LessonsImage11" />
-            <Image :imageSrc="LessonsImage12" />
-            <Image :imageSrc="LessonsImage13" />
-            <Image :imageSrc="LessonsImage14" />
-            <Image :imageSrc="LessonsImage15" />
-            <Image :imageSrc="LessonsImage16" />
-            <Image :imageSrc="LessonsImage17" />
-            <Image :imageSrc="LessonsImage18" />
-            <Image :imageSrc="LessonsImage19" />
-            <Image :imageSrc="LessonsImage20" />
-            <Image :imageSrc="LessonsImage21" />
-            <Image :imageSrc="LessonsImage22" />
-            <Image :imageSrc="LessonsImage23" />
-            <Image :imageSrc="LessonsImage24" />
-            <Image :imageSrc="LessonsImage25" />
-            <Image :imageSrc="LessonsImage26" />
-            <Image :imageSrc="LessonsImage27" />
-            <Image :imageSrc="LessonsImage28" />
-            <Image :imageSrc="LessonsImage29" />
+    <div class="pt-24 pb-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="font-extrabold text-4xl md:text-5xl text-gray-900 mb-4 tracking-tight">Lessons</h1>
+                <div class="w-24 h-1 bg-green-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    A visual collection of lessons and learning activities.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage1" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage2" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage3" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage4" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage5" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage6" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage7" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage8" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage9" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage10" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage11" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage12" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage13" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage14" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage15" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage16" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage17" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage18" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage19" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage20" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage21" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage22" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage23" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage24" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage25" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage26" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage27" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage28" />
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <Image :imageSrc="LessonsImage29" />
+                </div>
+            </div>
         </div>
     </div>
 </template>

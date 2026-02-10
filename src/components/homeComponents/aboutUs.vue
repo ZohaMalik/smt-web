@@ -9,58 +9,130 @@ import NewspaperImage from '@/assets/images/home/aboutUs/newspaper.svg';
 </script>
 
 <template>
-    <div>
-        <h2 class="font-extrabold text-4xl mb-5 max-w-screen-lg mx-auto">About Us</h2>
-        <!-- First Paragraph -->
-        <div class="max-w-screen-lg mx-auto mb-10">
-            <p>Sharif Memorial Trust was founded by the late Sharif Ahmed Malik, a philanthropist and agriculturist by profession, who was blessed with the ability to propagate Islamic ideology. His first project was launched in Kotli Loharan East, Kharota Syedan, Sialkot, Pakistan, in 1977 as Madrisa Taleem Ul Quran, along with Jamia Masjid Hanfia Talab Wali (Daras Pura).</p>
-            <p>In the early 1940s, he moved from Behlolpur, a village located on Jalalpur-Marala Headworks Road, Sialkot-Punjab, to Kotli Loharan East, Sialkot, to look after his father's (Ghulam Muyidin Khokhar Rajput) properties and agricultural lands. Later, the descendants of Haji Sharif Ahmed Malik established a trust in his memory in 1997, named "Sharif Memorial Trust."</p>
-            <p>The successors of the Kotli Loharan property donated the main residence, shops, and land adjacent to the mosque to the Trust for its divine cause.</p>
-            <p>Sharif Memorial Trust is characterized by strong, active, diverse community-based groups and networks with the following main objectives:</p>
-        </div>
-
-        <!-- Mid Part - Objective Points -->
-        <div class="flex justify-center items-baseline flex-wrap gap-y-10 gap-x-12 mb-12 max-w-screen-lg mx-auto">
-            <div class="flex flex-col justify-center items-center objectiveDiv text-center">
-                <img :src="EarthImage" alt="Earth Image" />
-                <p>Promoting all efforts toward civic betterment in the area within the provincial boundaries.</p>
+    <div class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            
+            <!-- Section Header -->
+            <div class="text-center mb-16 relative">
+                <h2 class="font-extrabold text-4xl md:text-5xl text-gray-900 mb-4 tracking-tight">About Us</h2>
+                <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
             </div>
 
-            <div class="flex flex-col justify-center items-center objectiveDiv text-center">
-                <img :src="ScholarHatImage" alt="Scholar Hat Image" />
-                <p>Improving local manpower skills by arranging preparation programs for specialized international industrial accrediation courses to fulfill local job seekers' requirements.</p>
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                <!-- Text Content -->
+                <div class="space-y-6 text-lg text-gray-600 leading-relaxed font-medium">
+                    <p class="animate-slide-up delay-100">
+                        <span class="text-green-600 font-bold text-xl">Sharif Memorial Trust</span> was founded by the late Sharif Ahmed Malik, a visionary philanthropist dedicated to community welfare and Islamic values.
+                    </p>
+                    <p class="animate-slide-up delay-200">
+                        Starting with <span class="text-gray-900 font-semibold">Madrisa Taleem Ul Quran</span> in 1977, the trust has grown from a local initiative in Kotli Loharan East to a comprehensive organization serving the broader community.
+                    </p>
+                    <p class="animate-slide-up delay-300">
+                        Established formally in 1997, the Trust continues to honor its founder's legacy through sustainable development, education, and social welfare programs.
+                    </p>
+                </div>
+
+                <!-- Highlight Card -->
+                <div class="modern-card glass border-l-4 border-green-500 p-8 transform rotate-1 hover:rotate-0 transition-transform duration-500">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
+                    <p class="text-gray-600 italic">
+                        "To foster a strong, active, and diverse community network dedicated to civic betterment, skill development, and social welfare."
+                    </p>
+                </div>
             </div>
 
-            <div class="flex flex-col justify-center items-center objectiveDiv text-center">
-                <img :src="HealthShieldImage" alt="Health Shield Image" />
-                <p>Promoting community awareness of safety, health, and the environment by organizing short courses and conferences.</p>
+            <!-- Objectives Grid -->
+            <h3 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Core Objectives</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+                
+                <!-- Objective 1 -->
+                <div class="modern-card group flex flex-col items-center text-center p-6 hover:bg-green-50 border border-gray-100 h-full">
+                    <div class="w-16 h-16 mb-5 rounded-full bg-green-100 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                        <img :src="EarthImage" alt="Civic Duty" class="w-8 h-8" />
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-green-600 transition-colors min-h-[56px] flex items-center">Civic Betterment</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Promoting collective efforts toward civic improvement within provincial boundaries.</p>
+                </div>
+
+                <!-- Objective 2 -->
+                <div class="modern-card group flex flex-col items-center text-center p-6 hover:bg-green-50 border border-gray-100 h-full">
+                    <div class="w-16 h-16 mb-5 rounded-full bg-blue-100 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                        <img :src="ScholarHatImage" alt="Education" class="w-8 h-8" />
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-green-600 transition-colors min-h-[56px] flex items-center">Skill Development</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Empowering local manpower through specialized international industrial accreditation programs.</p>
+                </div>
+
+                <!-- Objective 3 -->
+                <div class="modern-card group flex flex-col items-center text-center p-6 hover:bg-green-50 border border-gray-100 h-full">
+                    <div class="w-16 h-16 mb-5 rounded-full bg-red-100 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                        <img :src="HealthShieldImage" alt="Health" class="w-8 h-8" />
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-green-600 transition-colors min-h-[56px] flex items-center">Health & Safety</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Raising community awareness on health, safety, and environmental protection.</p>
+                </div>
+
+                <!-- Objective 4 -->
+                <div class="modern-card group flex flex-col items-center text-center p-6 hover:bg-green-50 border border-gray-100 h-full">
+                    <div class="w-16 h-16 mb-5 rounded-full bg-yellow-100 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                        <img :src="NewspaperImage" alt="Publications" class="w-8 h-8" />
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-green-600 transition-colors min-h-[56px] flex items-center">Civic Pride</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Publishing our newsletter to keep members informed and engaged with SMT activities.</p>
+                </div>
+
+                <!-- Objective 5 -->
+                <div class="modern-card group flex flex-col items-center text-center p-6 hover:bg-green-50 border border-gray-100 h-full">
+                    <div class="w-16 h-16 mb-5 rounded-full bg-purple-100 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                        <img :src="LeavesImage" alt="Charity" class="w-8 h-8" />
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-green-600 transition-colors min-h-[56px] flex items-center">Charitable Activities</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Conducting broad-based charitable initiatives to support the underprivileged.</p>
+                </div>
+
+                <!-- Objective 6 (Optional - for better grid balance) -->
+                <div class="modern-card group flex flex-col items-center text-center p-6 hover:bg-green-50 border border-gray-100 h-full">
+                    <div class="w-16 h-16 mb-5 rounded-full bg-teal-100 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-green-600 transition-colors min-h-[56px] flex items-center">Community Building</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">Fostering collaboration with civic groups and federations to amplify our community impact.</p>
+                </div>
             </div>
 
-            <div class="flex flex-col justify-center items-center objectiveDiv text-center">
-                <img :src="NewspaperImage" alt="Newspaper Image" />
-                <p>Promoting SMT objectives by publishing “Civic Pride”, a newsletter for the members of the organization.</p>
+
+            <!-- Additional Info -->
+            <div class="bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-200">
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                            <span class="w-2 h-8 bg-green-500 mr-3 rounded-full"></span>
+                            Nature of Activities
+                        </h4>
+                        <p class="text-gray-600 leading-relaxed">
+                            We are a non-partisan, non-sectarian organization. While we do not participate in political campaigns, we actively advocate for legislation and actions that promote community welfare.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                            <span class="w-2 h-8 bg-teal-500 mr-3 rounded-full"></span>
+                            Affiliations
+                        </h4>
+                        <p class="text-gray-600 leading-relaxed">
+                            We collaborate with like-minded federations and civic groups to amplify our impact, always maintaining our independent identity and core values.
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <div class="flex flex-col justify-center items-center objectiveDiv text-center">
-                <img :src="LeavesImage" alt="Leaves Image" />
-                <p>Charitable activities</p>
-            </div>
-        </div>
-
-        <!-- Last Paragraphs -->
-        <div class="max-w-screen-lg mx-auto mb-10">
-            <div class="font-medium">Nature of Activities:</div>
-            <p class="mb-6">The organization shall be non-partisan and non-sectarian and shall not support or oppose any candidate for political office, nor take part in any movement not aligned with its purposes and objectives. However, the organization reserves the right to take a position and express its views on any legislation, ordinance, or course of action that, in its judgment, will affect the welfare of its members. It also reserves the right to comment on the actions of individuals and groups whose purposes or actions affect the welfare of the area.</p>
-            <div class="font-medium">Affiliation with Other Groups:</div>
-            <p>The organization may join, support, and collaborate with federations, leagues, conventions, or other civic groups whose purposes and actions align with the welfare of the Sharif Memorial Trust, provided that no action under this section shall impair the continued existence of the organization as a distinct entity."</p>
         </div>
     </div>
 </template>
 
 <style scoped>
-
-.objectiveDiv {
-    max-width: 280px;
-}
-
+/* Scoped styles removed in favor of Tailwind classes */
 </style>

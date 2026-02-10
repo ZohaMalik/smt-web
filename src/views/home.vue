@@ -7,16 +7,16 @@ import Contacts from '@/components/homeComponents/contacts.vue';
 </script>
 
 <template>
-    <div class="screenContainerDiv fade-in scroll-smooth">
-        <div id="home">
+    <div class="fade-in scroll-smooth">
+        <section id="home">
             <Intro />
-        </div>
-        <div id="aboutUs">
+        </section>
+        <section id="aboutUs">
             <AboutUs />
-        </div>
-        <div id="contacts">
+        </section>
+        <section id="contacts">
             <Contacts />
-        </div>
+        </section>
     </div>
 </template>
 
