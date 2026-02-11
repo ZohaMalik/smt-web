@@ -8,6 +8,6 @@ Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://
 https://sites.google.com/view/www-sharifmemorial-com/aims?authuser=0
 
 <!-- To deploy after updating code -->
-- push code to main branch
-- npm run deploy
-- verify (github) (the website - sharifmemorialtrust.org)
+- push code/merge your branch to the main branch
+- Run: `npm run deploy`
+- verify (open github repository settings - select 'Pages' from side bar) (check the custom domain, should be - sharifmemorialtrust.org - if not update this then click save)
