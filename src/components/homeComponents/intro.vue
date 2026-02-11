@@ -6,7 +6,7 @@ import ArrowImage from '@/assets/images/home/intro/arrow.svg';
 </script>
 
 <template>
-    <div id="introDiv" class="p-5 rounded-lg flex flex-col justify-center items-center mb-12 max-w-screen-lg mx-auto">
+    <div id="introDiv" class="px-5 py-5 pb-16 rounded-lg flex flex-col justify-center items-center mb-12 max-w-screen-lg mx-auto">
         
         <!-- Lecture Button on Smaller Devices -->
         <div id="lectureButtonDiv" class="ml-auto flex justify-center rounded-lg px-3 py-2 bg-green-500 text-white cursor-pointer hover:border-green-500 hover:opacity-75 mb-3"
@@ -32,8 +32,7 @@ import ArrowImage from '@/assets/images/home/intro/arrow.svg';
 
         <!-- Org Description -->
         <p id="orgDescription" class="text-center text-black font-semibold text-lg">
-            Sharif Memorial Trust is a civic organization formed by voluntary entities in the social sphere. 
-            SMT represents a wide range of interests and is solely dedicated to community welfare.
+            A dynamic civic organization, powered by dedicated volunteers, representing diverse interests and fully committed to community welfare and meaningful social impact.
         </p>
     </div>
 </template>

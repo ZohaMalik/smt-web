@@ -21,15 +21,20 @@
                         ${selectedHomePageSection=='aboutUs'?'border-b-2 border-green-500':'hover-underline-animation'}`">
                 About Us
             </router-link>
+            <!-- <router-link v-if="showHomePageSections" to="#impact" @click="goToHomePageSection('impact')" 
+                :class="`mr-3 hidden md:inline 
+                        ${selectedHomePageSection=='impact'?'border-b-2 border-green-500':'hover-underline-animation'}`">
+                Your Impact
+            </router-link> -->
             <router-link v-if="showHomePageSections" to="#contacts" @click="goToHomePageSection('contacts')" 
                 :class="`mr-3 hidden md:inline 
                         ${selectedHomePageSection=='contacts'?'border-b-2 border-green-500':'hover-underline-animation'}`">
                 Contacts
             </router-link>
 
-            <button class="mr-3 bg-green-100 p-2 rounded-lg hover:opacity-75" title="Search">
+            <!-- <button class="mr-3 bg-green-100 p-2 rounded-lg hover:opacity-75" title="Search">
                 <img src="../../assets/images/navBar/search.svg" alt="Search" />
-            </button>
+            </button> -->
 
             <button @click="$emit('toggleSideBar')" class="bg-green-100 p-2 rounded-lg hover:opacity-75" title="Open Side Bar">
                 <img :src="sideBarOpenImage" alt="Open Side Bar" />

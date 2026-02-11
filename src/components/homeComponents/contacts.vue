@@ -1,6 +1,8 @@
 <template>
     <div>
-        <h2 class="font-extrabold text-4xl mb-5 max-w-screen-lg mx-auto">Contacts</h2>
+        <h2 class="font-extrabold text-4xl mb-5 max-w-screen-lg mx-auto flex items-center gap-2">
+            <img :src="LeavesHeaderImage" alt="Leaves Image" width="30" /> <span>Contacts</span>
+        </h2>
 
         <!-- Contacts & Address -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 mx-auto max-w-screen-lg text-center">
@@ -72,6 +74,7 @@
 
 <script setup>
 
+import LeavesHeaderImage from '@/assets/images/home/leaves.svg';
 import FacebookImage from '@/assets/images/home/contacts/facebook.svg';
 import EmailImage from '@/assets/images/home/contacts/email.svg';
 import LocationImage from '@/assets/images/home/contacts/location.svg';
