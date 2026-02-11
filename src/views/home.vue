@@ -2,7 +2,7 @@
 
 import Intro from '@/components/homeComponents/intro.vue';
 import AboutUs from '@/components/homeComponents/aboutUs.vue';
-import Impact from '@/components/homeComponents/impact.vue';
+// import Impact from '@/components/homeComponents/impact.vue';
 import Contacts from '@/components/homeComponents/contacts.vue';
 
 </script>
@@ -15,9 +15,9 @@ import Contacts from '@/components/homeComponents/contacts.vue';
         <div id="aboutUs">
             <AboutUs />
         </div>
-        <div id="impact">
+        <!-- <div id="impact">
             <Impact />
-        </div>
+        </div> -->
         <div id="contacts">
             <Contacts />
         </div>

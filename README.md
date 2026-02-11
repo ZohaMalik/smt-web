@@ -7,7 +7,15 @@ Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://
 <!-- Old Website Link -->
 https://sites.google.com/view/www-sharifmemorial-com/aims?authuser=0
 
-<!-- To deploy after updating code -->
-- push code/merge your branch to the main branch
+<!-- To deploy after updating code (old way for github pages) -->
+<!-- - push code/merge your branch to the main branch
 - Run: `npm run deploy`
-- verify (open github repository settings - select 'Pages' from side bar) (check the custom domain, should be - sharifmemorialtrust.org - if not update this then click save)
+- verify (open github repository settings - select 'Pages' from side bar) (check the custom domain, should be - sharifmemorialtrust.org - if not update this then click save) -->
+
+<!-- new way to deploy on c_panel -->
+- make sure vite.config.js has: 
+`base: './'`
+- after confirming base, run `npm run build`
+- in c panel, there is already a 'public_html' folder
+- delete all content inside the public_html folder
+- then paste all the files/folders that are inside the dist folder in the public_html folder

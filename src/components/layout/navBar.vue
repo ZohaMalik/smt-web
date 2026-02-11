@@ -21,11 +21,11 @@
                         ${selectedHomePageSection=='aboutUs'?'border-b-2 border-green-500':'hover-underline-animation'}`">
                 About Us
             </router-link>
-            <router-link v-if="showHomePageSections" to="#impact" @click="goToHomePageSection('impact')" 
+            <!-- <router-link v-if="showHomePageSections" to="#impact" @click="goToHomePageSection('impact')" 
                 :class="`mr-3 hidden md:inline 
                         ${selectedHomePageSection=='impact'?'border-b-2 border-green-500':'hover-underline-animation'}`">
                 Your Impact
-            </router-link>
+            </router-link> -->
             <router-link v-if="showHomePageSections" to="#contacts" @click="goToHomePageSection('contacts')" 
                 :class="`mr-3 hidden md:inline 
                         ${selectedHomePageSection=='contacts'?'border-b-2 border-green-500':'hover-underline-animation'}`">
