@@ -1,37 +1,55 @@
 <template>
-    <Transition>
-        <div v-if="isOpen" id="sideBarDiv" class="bg-white p-3">
-            <!-- SideBar Close Image -->
-            <div class="flex justify-end items-center">
-                <button @click="$emit('toggleSideBar')" class="bg-green-100 p-2 mb-3 rounded-lg hover:opacity-75" 
-                    title="Close Side Bar">
-                    <img :src="sideBarCloseImage" alt="Close Side Bar" />
-                </button>
-            </div>
+    <div>
+        <!-- Backdrop -->
+        <div v-if="isOpen" @click="$emit('toggleSideBar')" class="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity fade-in"></div>
 
-            <!-- SideBar Content -->
-            <div v-for="item in items" :key="item.name">
-                <div @click="selectedItem.name==item.name?(item.subItems.length ? toggleSubMenuDisplay() : null):selectItem(item)"
-                    :class="`py-2 px-4 mb-3 rounded-xl flex justify-between items-center
-                            ${(selectedItem.name==item.name && item.subItems.length==0)?'bg-green-100':'cursor-pointer'}
-                            ${selectedItem.name==item.name?'font-semibold':''}`">
-                    {{ item.name }}
-                    <img v-if="item.subItems.length" alt="Show Sub Menu"
-                        :src="selectedItem.name==item.name && showSubItems ? bottomArrowImage : rightArrowImage" />
+        <Transition name="slide-left">
+            <div v-if="isOpen" class="fixed top-0 left-0 z-50 h-full w-[300px] bg-white shadow-2xl overflow-y-auto p-4 flex flex-col">
+                <!-- SideBar Close Image -->
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 tracking-tight">Menu</h2>
+                        <p class="text-xs text-gray-500">Sharif Memorial Trust</p>
+                    </div>
+                    <button @click="$emit('toggleSideBar')" class="bg-gray-100 p-2 rounded-full hover:bg-gray-200 transition-colors" 
+                        title="Close Side Bar">
+                        <img :src="sideBarCloseImage" alt="Close Side Bar" class="w-5 h-5" />
+                    </button>
                 </div>
 
-                <!-- For Sub Menu's -->
-                <div v-if="selectedItem.name==item.name && item.subItems.length && showSubItems" 
-                    :class="`px-7 pr-3 mb-3 subItemsDiv ${item.subItemClassName}`">
-                    <div v-for="subItem in item.subItems" :key="item.name+subItem.name" 
-                        @click="selectedSubItem.name==subItem.name?null:selectSubItem(subItem)"
-                        :class="`py-2 px-4 rounded-xl ${selectedSubItem.name==subItem.name?'bg-green-100 font-semibold':'cursor-pointer'}`">
-                        {{ subItem.name }}
+                <!-- SideBar Content -->
+                <div class="flex-grow space-y-2">
+                    <div v-for="item in items" :key="item.name">
+                        <div @click="selectedItem.name==item.name?(item.subItems.length ? toggleSubMenuDisplay() : null):selectItem(item)"
+                            :class="itemClass(item)">
+                            <span class="text-sm tracking-wide">{{ item.name }}</span>
+                            <img v-if="item.subItems.length" alt="Show Sub Menu"
+                                :class="{'transform rotate-180': selectedItem.name==item.name && showSubItems}"
+                                class="transition-transform duration-200 opacity-60"
+                                :src="selectedItem.name==item.name && showSubItems ? bottomArrowImage : rightArrowImage" />
+                        </div>
+
+                        <!-- For Sub Menu's -->
+                        <Transition name="fade">
+                            <div v-if="selectedItem.name==item.name && item.subItems.length && showSubItems" 
+                                class="ml-4 pl-4 mt-2 border-l-2 border-gray-100 space-y-1">
+                                <div v-for="subItem in item.subItems" :key="item.name+subItem.name" 
+                                    @click="selectedSubItem.name==subItem.name?null:selectSubItem(subItem)"
+                                    :class="subItemClass(subItem)">
+                                    {{ subItem.name }}
+                                </div>
+                            </div>
+                        </Transition>
                     </div>
                 </div>
+
+                <!-- Footer/Bottom Branding (Optional add) -->
+                <div class="mt-auto pt-6 border-t border-gray-100 text-center">
+                    <span class="text-xs text-gray-400 font-medium">Sharif Memorial Trust</span>
+                </div>
             </div>
-        </div>
-    </Transition>
+        </Transition>
+    </div>
 </template>
 
 <script>
@@ -102,36 +120,20 @@ export default {
             showSubItems: true
         }
     },
-    created()
-    {
-        try {
-            let urlParts = window.location.pathname.split('/');        
-    
-            let itemExists = this.items.filter(i => i.route==`/${urlParts[1]}`).length;
-            let subItemExists = true;
-            if(urlParts.length == 3) { subItemExists = this.items.filter(i => i.route==`/${urlParts[1]}`)[0].subItems.filter(i => i.route==`${urlParts[2]}`).length; }
-            
-            if((urlParts.length == 2 || urlParts.length == 3) && itemExists)
-            {
-                this.selectedItem = this.items.filter(i => i.route==`/${urlParts[1]}`)[0];
-                this.$emit('screenChanged', `/${urlParts[1]}`);
-    
-                if(urlParts.length == 3 && subItemExists)
-                {
-                    this.selectedSubItem = this.selectedItem.subItems.filter(i => i.route==`${urlParts[2]}`)[0];
-                    this.showSubItems = true;
-                    this.$emit('screenChanged', `/${urlParts[2]}`);
-                }
-                else { this.setNotFoundPage(); }
+    watch: {
+        $route: {
+            immediate: true,
+            handler() {
+                this.syncSelectionWithRoute();
             }
-            else { this.setNotFoundPage(); }
         }
-        catch(error) { this.setNotFoundPage(); }
     },
     methods: {
         setNotFoundPage()
         {
             this.selectedItem = { name: '404', subItems: [], route: '/404' };
+            this.selectedSubItem = null;
+            this.showSubItems = false;
         },
         selectItem(itemToSelect)
         {
@@ -155,51 +157,82 @@ export default {
             this.$router.push(this.selectedItem.route + subItemToSelect.route);
             this.$emit('screenChanged', this.selectedItem.route + subItemToSelect.route);
         },
-        toggleSubMenuDisplay() { this.showSubItems = !this.showSubItems; }
+        toggleSubMenuDisplay() { this.showSubItems = !this.showSubItems; },
+        syncSelectionWithRoute()
+        {
+            const path = this.$route.path || '/';
+            if (path === '/') {
+                this.selectedItem = this.items[0];
+                this.selectedSubItem = null;
+                this.showSubItems = false;
+                return;
+            }
+
+            const parts = path.split('/').filter(Boolean);
+            const item = this.items.find((i) => i.route === `/${parts[0]}`);
+            if (!item) {
+                this.setNotFoundPage();
+                return;
+            }
+
+            this.selectedItem = item;
+            if (parts.length > 1 && item.subItems.length) {
+                const subItem = item.subItems.find((s) => s.route === `/${parts[1]}`);
+                if (subItem) {
+                    this.selectedSubItem = subItem;
+                    this.showSubItems = true;
+                } else {
+                    this.selectedSubItem = null;
+                    this.showSubItems = false;
+                }
+            } else {
+                this.selectedSubItem = null;
+                this.showSubItems = false;
+            }
+        },
+        itemClass(item)
+        {
+            const isActive = this.selectedItem && this.selectedItem.name === item.name;
+            return `py-3 px-4 rounded-xl flex justify-between items-center transition-all duration-200 ${isActive ? 'bg-green-50 text-green-700 font-semibold border-l-4 border-green-500' : 'cursor-pointer text-gray-600 hover:bg-gray-50 hover:text-gray-900'} hover:translate-x-1`;
+        },
+        subItemClass(subItem)
+        {
+            const isActive = this.selectedSubItem && this.selectedSubItem.name === subItem.name;
+            return `py-2 px-3 rounded-lg text-sm transition-all duration-200 ${isActive ? 'text-green-600 font-bold bg-green-50/60' : 'cursor-pointer text-gray-500 hover:text-gray-900'} hover:translate-x-1`;
+        }
     }
 }
 </script>
 
 <style scoped>
 
-#sideBarDiv {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    min-width: 280px;
-    width: 280px;
-    max-width: 280px;
-    min-height: 100vh;
-    height: 100vh;
-    overflow-y: auto;
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* Horizontal, Vertical, Blur, Color */
-    transition: transform 0.3s ease-out;
-    z-index: 100;
-
-    /* To hide the scrollbar */
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer */
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: transform 0.35s ease;
 }
 
-/* To hide the scrollbar */
-#sideBarDiv::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Edge */
+.slide-left-enter-from,
+.slide-left-leave-to {
+  transform: translateX(-100%);
 }
 
-/* Transition classes for sliding the sideBar - https://vuejs.org/guide/built-ins/transition */
-.v-enter-from { transform: translateX(100%); }
-.v-leave-to { transform: translateX(100%); }
-
-/* Line on left of sub menu */
-.subItemsDiv::before {
-    content: '';
-    position: absolute;
-    left: 25px;
-    width: 4px;
-    background-color: black;
-    border-radius: 8px;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
 }
-.subItemsDiv.academy::before { height: 230px; }
-.subItemsDiv.info::before { height: 130px; }
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Custom scrollbar hiding if needed, though Tailwind mostly handles it */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1; 
+  border-radius: 4px;
+}
 
 </style>

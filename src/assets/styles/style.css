@@ -2,42 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --primary-green: #01A58A;
+    --primary-green-light: #34D399;
+    --primary-green-dark: #016F5C;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.18);
+}
+
 * {
     font-family: 'Manrope', sans-serif;
 }
 
 /* Selection Style */
 ::selection {
-    background-color: #01A58A;
+    background-color: var(--primary-green);
     color: #ffffff;
-    text-shadow: 1px 1px 2px #000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Scrollbar Style */
-::-webkit-scrollbar { /* Scrollbar container */
-    width: 10px; /* Width for vertical scrollbar */
-    height: 10px; /* Height for horizontal scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
 }
-::-webkit-scrollbar-track { background: #f0f0f0; }
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: linear-gradient(180deg, #01A58A 0%, #016F5C 100%);
     border-radius: 10px;
 }
-::-webkit-scrollbar-thumb:hover { background: #555; }
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #34D399 0%, #01A58A 100%);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
 
 .screenContainerDiv {
     max-width: 1400px;
     margin-right: auto;
     margin-left: auto;
-    min-height: calc(100vh - (65px + 50px)); /* total screen height - (navBar height - footer height) */
+    min-height: calc(100vh - (65px + 50px));
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    padding-top: 6rem;
+    /* 96px to account for 64px navbar + spacing */
+    padding-bottom: 2.5rem;
+    color: #1F2937;
+}
 
-    /* px-7 class of tailwind */
-    padding-left: 1.75rem; /* 28px */
-    padding-right: 1.75rem; /* 28px */
+/* Glassmorphism Utility */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+}
 
-    /* py-10 class of tailwind */
-    padding-top: 2.5rem; /* 40px */
-    padding-bottom: 2.5rem; /* 40px */
+.glass-strong {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
 
-    color: black;
+/* Hover Underline Animation */
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--primary-green);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Modern Card Styles */
+.modern-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.modern-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, #01A58A 0%, #34D399 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }

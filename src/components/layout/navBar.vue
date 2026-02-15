@@ -1,51 +1,69 @@
 <template>
-    <div id="navBarDiv" class="fade-in flex justify-between items-center px-5 bg-white border-b border-gray-200">
+    <div id="navBarDiv" class="fixed top-0 w-full bg-white border-b border-gray-200 shadow-sm z-50 transition-all duration-300">
+        <div class="px-6 h-16 flex items-center gap-4">
+            
+            <!-- Left Side - Menu, Search, Brand -->
+            <div class="flex items-center gap-2">
+                <button @click="$emit('toggleSideBar')" class="p-2 rounded-lg hover:bg-gray-100 transition-colors" title="Menu">
+                    <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
 
-        <!-- Left Side -->
-        <div class="flex justify-center items-center cursor-pointer" @click="showHomeScreen">
-            <img src="../../assets/images/logo.svg" alt="Logo" class="mr-2" />
-            <span class="font-bold text-lg">
-                SMT<span class="hidden sm:inline text-lg"> - Sharif Memorial Trust</span>
-            </span>
-        </div>
+                <button class="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-green-600 transition-colors" title="Search">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </button>
 
-        <!-- Right Side -->
-        <div class="flex justify-center items-center">
-            <router-link v-if="showHomePageSections" to="#home" @click="goToHomePageSection('home')"
-                :class="`mr-3 hidden md:inline
-                        ${selectedHomePageSection=='home'?'border-b-2 border-green-500':'hover-underline-animation'}`">
-                Home
-            </router-link>
-            <router-link v-if="showHomePageSections" to="#aboutUs" @click="goToHomePageSection('aboutUs')" 
-                :class="`mr-3 hidden md:inline 
-                        ${selectedHomePageSection=='aboutUs'?'border-b-2 border-green-500':'hover-underline-animation'}`">
-                About Us
-            </router-link>
-            <!-- <router-link v-if="showHomePageSections" to="#impact" @click="goToHomePageSection('impact')" 
-                :class="`mr-3 hidden md:inline 
-                        ${selectedHomePageSection=='impact'?'border-b-2 border-green-500':'hover-underline-animation'}`">
-                Your Impact
-            </router-link> -->
-            <router-link v-if="showHomePageSections" to="#contacts" @click="goToHomePageSection('contacts')" 
-                :class="`mr-3 hidden md:inline 
-                        ${selectedHomePageSection=='contacts'?'border-b-2 border-green-500':'hover-underline-animation'}`">
-                Contacts
-            </router-link>
+                <div class="flex items-center cursor-pointer group ml-2" @click="showHomeScreen">
+                    <img src="../../assets/images/logo.svg" alt="Logo" class="h-9 w-9 transition-transform duration-300 group-hover:scale-110" />
+                    <div class="ml-3 flex flex-col">
+                        <span class="font-bold text-lg text-gray-900 tracking-tight group-hover:text-green-600 transition-colors leading-tight">SMT</span>
+                        <span class="hidden sm:block text-xs text-gray-500 leading-tight">Sharif Memorial Trust</span>
+                    </div>
+                </div>
+            </div>
 
-            <!-- <button class="mr-3 bg-green-100 p-2 rounded-lg hover:opacity-75" title="Search">
-                <img src="../../assets/images/navBar/search.svg" alt="Search" />
-            </button> -->
+            <!-- Center - Navigation Links (Desktop) -->
+            <nav class="hidden md:flex flex-1 items-center justify-center space-x-1">
+                <!-- Main Navigation Tabs -->
+                <router-link v-if="!showHomePageSections" to="/" :class="navLinkClass('/')">
+                    Home
+                </router-link>
 
-            <button @click="$emit('toggleSideBar')" class="bg-green-100 p-2 rounded-lg hover:opacity-75" title="Open Side Bar">
-                <img :src="sideBarOpenImage" alt="Open Side Bar" />
-            </button>
+                <!-- Home Page Sections (only on home page) -->
+                <router-link v-if="showHomePageSections" :to="{ path: '/', hash: '#home' }" @click="goToHomePageSection('home')" :class="sectionLinkClass('home')">
+                    Intro
+                </router-link>
+                
+                <router-link v-if="showHomePageSections" :to="{ path: '/', hash: '#aboutUs' }" @click="goToHomePageSection('aboutUs')" :class="sectionLinkClass('aboutUs')">
+                    About Us
+                </router-link>
+                
+                <router-link v-if="showHomePageSections" :to="{ path: '/', hash: '#contacts' }" @click="goToHomePageSection('contacts')" :class="sectionLinkClass('contacts')">
+                    Contacts
+                </router-link>
+
+                <router-link to="/donations" :class="navLinkClass('/donations')">
+                    Donations
+                </router-link>
+                
+                <router-link to="/ourAimsAndObjectives" :class="navLinkClass('/ourAimsAndObjectives')">
+                    Our Aims
+                </router-link>
+                
+                <router-link to="/futureProjects" :class="navLinkClass('/futureProjects')">
+                    Projects
+                </router-link>
+            </nav>
+
+            <div class="hidden md:block w-8"></div>
         </div>
     </div>
 </template>
 
 <script>
-import sideBarOpenImage from '@/assets/images/navBar/sideBarOpen.svg';
-
 export default {
     name: 'NavBar',
     props: ['showHomePageSections'],
@@ -53,7 +71,34 @@ export default {
     {
         return {
             selectedHomePageSection: 'home',
-            sideBarOpenImage
+            sectionObserver: null,
+            sectionObserverRetries: 0
+        }
+    },
+    mounted()
+    {
+        this.setupSectionObserver();
+    },
+    beforeUnmount()
+    {
+        this.teardownSectionObserver();
+    },
+    watch: {
+        '$route.hash': {
+            immediate: true,
+            handler(hash) {
+                if (!hash) {
+                    this.selectedHomePageSection = 'home';
+                    return;
+                }
+                const section = hash.replace('#', '');
+                if (['home', 'aboutUs', 'contacts'].includes(section)) {
+                    this.selectedHomePageSection = section;
+                }
+            }
+        },
+        showHomePageSections() {
+            this.setupSectionObserver();
         }
     },
     methods: {
@@ -65,15 +110,68 @@ export default {
         goToHomePageSection(sectionName)
         {            
             this.selectedHomePageSection = sectionName;
+        },
+        navLinkClass(path)
+        {
+            const isActive = this.$route.path === path;
+            return `px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive ? 'bg-green-50 text-green-700 font-semibold' : 'text-gray-600 hover:bg-gray-50 hover:text-green-600'}`;
+        },
+        sectionLinkClass(section)
+        {
+            const isActive = this.selectedHomePageSection === section;
+            return `px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive ? 'bg-green-50 text-green-600 font-semibold' : 'text-gray-600 hover:bg-gray-50 hover:text-green-600'}`;
+        },
+        setupSectionObserver()
+        {
+            this.teardownSectionObserver();
+            if (!this.showHomePageSections) { return; }
+
+            const sections = ['home', 'aboutUs', 'contacts']
+                .map((id) => document.getElementById(id))
+                .filter(Boolean);
+
+            if (!sections.length) {
+                if (this.sectionObserverRetries < 3) {
+                    this.sectionObserverRetries += 1;
+                    this.$nextTick(() => this.setupSectionObserver());
+                }
+                return;
+            }
+
+            this.sectionObserverRetries = 0;
+
+            this.sectionObserver = new IntersectionObserver(
+                (entries) => {
+                    const visible = entries
+                        .filter((entry) => entry.isIntersecting)
+                        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+                    if (visible.length) {
+                        const id = visible[0].target.id;
+                        if (this.selectedHomePageSection !== id) {
+                            this.selectedHomePageSection = id;
+                        }
+                    }
+                },
+                {
+                    root: null,
+                    rootMargin: '-20% 0px -60% 0px',
+                    threshold: [0.2, 0.4, 0.6]
+                }
+            );
+
+            sections.forEach((section) => this.sectionObserver.observe(section));
+        },
+        teardownSectionObserver()
+        {
+            if (this.sectionObserver) {
+                this.sectionObserver.disconnect();
+                this.sectionObserver = null;
+            }
         }
     }
 }
 </script>
 
 <style scoped>
-
-#navBarDiv {
-    height: 65px;
-}
-
+/* Additional styles if needed */
 </style>
